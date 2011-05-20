@@ -10,10 +10,6 @@ public abstract class BasePlugin {
 
 	public abstract String author();
 
-	public boolean hidden() {
-		return false;
-	};
-
 	public final void registerCmd(String cmd, Object toCall, Object that) {
 		Main.cmdmap.put(cmd, toCall);
 		Main.classmap.put(cmd, that);
@@ -24,6 +20,22 @@ public abstract class BasePlugin {
 						+ "\" to "
 						+ toCall.toString().split(" ")[toCall.toString().split(
 								" ").length - 1]);
+
+	}
+
+	public final void registerCmd(String cmd, Object toCall, Object that,
+			String help) {
+		Main.cmdmap.put(cmd, toCall);
+		Main.classmap.put(cmd, that);
+		Main.helpmap.put(cmd, help);
+
+		System.out
+				.println("Hooked command \""
+						+ cmd
+						+ "\" to "
+						+ toCall.toString().split(" ")[toCall.toString().split(
+								" ").length - 1] + " with the help entry \""
+						+ help + "\"");
 
 	}
 }
