@@ -10,7 +10,7 @@ public class GuiBot extends PircBot {
 	public static String pref = "$";
 
 	public GuiBot() {
-		this.setName("GuiBot");
+		this.setName(Main.nick);
 	}
 
 	public void onMessage(String channel, String sender, String login,
@@ -45,10 +45,10 @@ public class GuiBot extends PircBot {
 				} else {
 					for (Map.Entry<String, String> entry : Main.helpmap
 							.entrySet()) {
-						toprint += entry.getKey();
+						toprint += entry.getKey()+" ";
 					}
 				}
-				Main.bot.sendMessage(channel, toprint);
+				Main.bot.sendMessage(channel, toprint.trim());
 			} else if (Main.cmdmap.containsKey(first)) {
 				try {
 					Method met = (Method) Main.cmdmap.get(first);

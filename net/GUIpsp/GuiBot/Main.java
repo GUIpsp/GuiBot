@@ -12,9 +12,10 @@ public class Main {
 	public static Map<String, String> helpmap = new HashMap<String, String>();
 	static String plugdir = "/home/guipsp/Desktop/GuiBot/plugins/";
 	static File directory = new File(plugdir);
+	public static String nick = "GuiBot";
 	public static GuiBot bot = new GuiBot();
-
 	public static void main(String[] args) throws Throwable {
+
 		reLoad();
 		bot.setVerbose(true);
 		try {
@@ -25,7 +26,7 @@ public class Main {
 		// bot.identify("");
 		bot.joinChannel("##crow");
 	}
-	
+
 	public static void reLoad() throws Throwable {
 		classmap.clear();
 		cmdmap.clear();
