@@ -9,7 +9,7 @@ public class Main {
 	public static Map classmap = new HashMap();
 	public static Map cmdmap = new HashMap();
 	public static Map<String, String> helpmap = new HashMap<String, String>();
-	static File directory = new File("/home/guipsp/Desktop/GuiBot/plugins/");
+	static File directory = new File("plugins/");
 	public static String nick = "GuiBot";
 	public static GuiBot bot = new GuiBot();
 	public static void main(String[] args) throws Throwable {
