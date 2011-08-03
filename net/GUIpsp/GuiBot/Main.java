@@ -9,8 +9,7 @@ public class Main {
 	public static Map classmap = new HashMap();
 	public static Map cmdmap = new HashMap();
 	public static Map<String, String> helpmap = new HashMap<String, String>();
-	static String plugdir = "/home/guipsp/Desktop/GuiBot/plugins/";
-	static File directory = new File(plugdir);
+	static File directory = new File("/home/guipsp/Desktop/GuiBot/plugins/");
 	public static String nick = "GuiBot";
 	public static GuiBot bot = new GuiBot();
 	public static void main(String[] args) throws Throwable {
@@ -31,7 +30,7 @@ public class Main {
 		cmdmap.clear();
 		helpmap.clear();
 		URL classUrl;
-		classUrl = new URL("file://" + plugdir);
+		classUrl = new URL("file://" + directory.getAbsolutePath()+"/");
 		URL[] classUrls = { classUrl };
 		URLClassLoader ucl = new URLClassLoader(classUrls);
 		File files[] = directory.listFiles();
