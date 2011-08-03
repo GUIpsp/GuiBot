@@ -1,11 +1,10 @@
 package net.GUIpsp.GuiBot;
 
 import java.io.*;
-
 import java.net.*;
 import java.util.*;
 import org.jibble.pircbot.*;
-
+@SuppressWarnings("rawtypes")
 public class Main {
 	public static Map classmap = new HashMap();
 	public static Map cmdmap = new HashMap();

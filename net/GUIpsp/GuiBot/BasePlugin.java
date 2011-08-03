@@ -1,5 +1,5 @@
 package net.GUIpsp.GuiBot;
-
+@SuppressWarnings("unchecked")
 public abstract class BasePlugin {
 
 	public abstract void main() throws Throwable;
@@ -22,6 +22,7 @@ public abstract class BasePlugin {
 								" ").length - 1]);
 
 	}
+
 
 	public final void registerCmd(String cmd, Object toCall, Object that,
 			String help) {
