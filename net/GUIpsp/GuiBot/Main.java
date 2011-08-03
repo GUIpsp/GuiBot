@@ -4,6 +4,7 @@ import java.io.*;
 import java.net.*;
 import java.util.*;
 import org.jibble.pircbot.*;
+
 @SuppressWarnings("rawtypes")
 public class Main {
 	public static Map classmap = new HashMap();
@@ -12,13 +13,17 @@ public class Main {
 	static File directory = new File("plugins/");
 	public static String nick = "GuiBot";
 	public static GuiBot bot = new GuiBot();
-	public static void main(String[] args) throws Throwable {
 
+	public static void main(String[] args) throws Throwable {
+		if (!directory.exists()) {
+			directory.mkdirs();
+		}
 		reLoad();
 		bot.setVerbose(true);
 		try {
 			bot.connect("irc.esper.net");
-		} catch (NickAlreadyInUseException e) {
+		}
+		catch (NickAlreadyInUseException e) {
 			System.out.println("Nickname is in use.");
 		}
 		// bot.identify("");
@@ -30,7 +35,7 @@ public class Main {
 		cmdmap.clear();
 		helpmap.clear();
 		URL classUrl;
-		classUrl = new URL("file://" + directory.getAbsolutePath()+"/");
+		classUrl = new URL("file://" + directory.getAbsolutePath() + "/");
 		URL[] classUrls = { classUrl };
 		URLClassLoader ucl = new URLClassLoader(classUrls);
 		File files[] = directory.listFiles();
